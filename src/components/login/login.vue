@@ -43,10 +43,10 @@ export default {
 					this.$router.push({
 						name: 'home'
 					})
-					this.$message.success(msg);
+					this.$message.success(msg)
 				} else {
 					//登录失败
-					this.$message.error(msg);
+					this.$message.error(msg)
         }
       }
     }

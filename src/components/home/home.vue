@@ -8,7 +8,7 @@
                     </div>
                 </el-col>
                 <el-col :span="18" class="middle">
-                    <h3 class="biaoti">小崔上学后台管理系统</h3>
+                    <h3 class="biaoti">小崔挨打后台管理系统</h3>
                 </el-col>
                 <el-col :span="2">
                     <!-- @click.prevent 阻止事件的默认行为， -->
@@ -19,13 +19,13 @@
         </el-header>
         <el-container>
             <el-aside class="aside" width="200px">
-                <el-menu>
+                <el-menu :router="true" :unique-opened="true">
                     <el-submenu index="1">
                         <template slot="title">
                             <i class="el-icon-location"></i>
                             <span>用户管理</span>
                         </template>
-                        <el-menu-item index="1-1">
+                        <el-menu-item index="users">
                             <i class="el-icon-circle-check"></i>
                             <span>用户列表</span>
                         </el-menu-item>
@@ -40,7 +40,7 @@
                             <i class="el-icon-circle-check"></i>
                             <span>角色列表</span>
                         </el-menu-item>
-                        <el-menu-item index="1-1">
+                        <el-menu-item index="right">
                             <i class="el-icon-circle-check"></i>
                             <span>权限列表</span>
                         </el-menu-item>
@@ -88,7 +88,9 @@
                     </el-submenu>
                 </el-menu>
             </el-aside>
-            <el-main class="main">Main</el-main>
+            <el-main class="main">
+                <router-view></router-view>
+            </el-main>
         </el-container>
     </el-container>
 </template>
@@ -107,7 +109,7 @@
                 })
             }
             //if token 有->继续渲染组件
-
+            
         },
         methods: {
             handleSignout() {
